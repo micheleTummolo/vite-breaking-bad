@@ -20,12 +20,20 @@ export default {
     this.getCards();
   },
 
+  mounted() {
+    this.cardsFound();
+  },
+
   methods: {
     getCards() {
       axios.get(store.url).then((response) => {
         store.cardsInfo = response.data.data
       })
-    }
+    },
+
+    cardsFound() {
+      store.cardsFound = store.cardsInfo.length
+    },
   },
 }
 </script>

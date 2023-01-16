@@ -1,13 +1,15 @@
 <script>
-import CardList from './AppCardList.vue';
 import AppSearch from './AppSearch.vue';
+import AppCardsFound from './AppCardsFound.vue';
+import CardList from './AppCardList.vue';
 
 import { store } from '../store.js';
 
 export default {
     components: {
-        CardList,
         AppSearch,
+        AppCardsFound,
+        CardList,
     },
 
     data() {
@@ -23,8 +25,8 @@ export default {
             axios.get(store.url).then((response) => {
                 store.cardsInfo = response.data.data
             })
-            console.log(store.selected)
-            console.log(store.url)
+
+            store.cardsFound = store.cardsInfo.length
         }
     },
 
@@ -34,6 +36,7 @@ export default {
     <AppSearch @selected="changeValue"></AppSearch>
     <div class="row mt-4 p-5  content">
         <div class="col p-0">
+            <AppCardsFound></AppCardsFound>
             <CardList></CardList>
         </div>
     </div>
