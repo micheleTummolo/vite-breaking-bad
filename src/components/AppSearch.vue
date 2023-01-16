@@ -16,9 +16,15 @@ export default {
             <select class="form-select" v-model="store.selected" @change="$emit('selected')">
                 <option disabled selected hidden>Select Archetype</option>
                 <option>Alien</option>
+                <option>Abyss Actor</option>
+                <option>Adamancipator</option>
+                <option>Batteryman</option>
                 <option>Blue-Eyes</option>
+                <option>Chaos</option>
+                <option>Despia</option>
                 <option>Guardian</option>
                 <option>Mecha Phantom Beast</option>
+                <option>Odd-Eyes</option>
             </select>
         </div>
     </div>
